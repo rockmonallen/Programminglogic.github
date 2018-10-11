@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PTO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>
+        PTO (Paid Time Off) Program
+    </h1>
+
+    <p> 
+        V1<br>
+        5hrs per paycheck<br>
+        Bi-weekly<br>
+        PTO for 1yr<br>
+    </p>
+
+    <p>Start</p><br>
+    <p>Display"You get 5hrs of PTO perpaycheck"</p><br>
+    <p>set hourPerPaycheck = 5</p><br>
+    <p>set paychecksPerYear = 26</p><br>
+    <p>set PTO = paychecksPerYear * hourPerPaycheck</p><br>
+    <p>Your paid time off is <span id="output"></span></p><br>
+    <p>"End"</p><br>
+
+    <h1>PTO ONE</h1>
+    <script>
+        // Get the element we will fill with the answer
+        var output = document.getElementById('output');
+
+        //Get how many paychecks we get a year
+        var paychecksPerYear = 26;
+
+        // Set the rate at which we earn hours/paycheck
+        var hourPerPaycheck = 5;
+
+        //Calculate the total number of hours we earn in a year 
+        var totalHoursPerYear = hourPerPaycheck * paychecksPerYear;
+
+        // Output the total to the html element we specified 
+        output.innerHTML = totalHoursPerYear;
+    </script>
+</body>
+</html>

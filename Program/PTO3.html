@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PTO3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+     .error {
+         color: red;
+     }
+    </style>
+</head>
+<body>
+    
+<h2>PTO THREE</h2>
+    <!--<ul>
+        <li><p>How many years have you worked ?</p></li>
+        <li>If years worked is less than 5 then PTOperCheck is 5</li>
+        <li>If years worked is greater than or equal to 5 then PTOperCheck is 6</li>
+        <li>If years worked is greater than or equal to 10 then PTOperCheck is 7</li>
+    </ul>-->
+
+    <!--<ul>
+        <p>How many weeks have you worked this year?</p>
+        <li>Input is equal to weeksSoFar</li>
+        <li>You divide weeksSoFar by 2 to determine how many checks they have gotten</li>
+        <li>Then you times NumberOfChecks * PTOperCheck which will give you HoursToDate</li>
+    </ul>
+    <p>How many PTO time have you used ?</p>
+    <form action="#" onsubmit="callPTO3">
+        <input type="text" id="CurrentPTO">
+        <input type="sumbit" value="submit">
+    </form>-->
+    
+    <!--<ul>
+        <li>The input of the question is equal to CurrentPTO</li>
+        <li>Then you use HoursToDate - CurrentPTO</li>
+        <li>HoursToDate - CurrentPTO = LastOfPTO(hours)</li>
+    </ul>-->
+    <!--<p>How would you like to display your PTO ?</p>-->
+    <!--<li>If user choses days divide LastOfPTO by 24 </li>
+    <li>If user choses hours LastOfPTO remains the same </li>
+    <li>If user choses weeks divide the LastOfPTO BY 40 </li>-->
+
+    <form action="#" onsubmit="event.preventDefault(); callPTO3();">
+        <p>How many years have you worked ?</p>
+        <input type="text" id="yearsworking" value="0">
+        <p id="errorYrs" class="error"></p>
+        <p>How many weeks have you worked this year?</p>
+        <input type="text" id="weeksSoFar" value="0">
+        <p id="errorWeeks" class="error"></p>
+        <p>How many hours have you used ?</p>
+        <input type="text" id="hoursused" value="0">
+        <p>How would you like to display your PTO ?</p>
+        <select id="results" action="#">
+            <option  value="0">hours</option>
+            <option   value="8">days</option>
+            <option  value="40">weeks</option>
+        </select><br><br>
+        <input type="submit" value="submit">
+    </form>
+    
+    <p>Your remaining PTO is <span id="output"></span></p>
+    <script>
+        function callPTO3() {
+            var PTOperCheck = 0;
+            var output = document.getElementById('output');
+            var errorYrs = document.getElementById('errorYrs');
+            var errorWeeks = document.getElementById('errorWeeks');
+            errorYrs.innerHTML = errorWeeks.innerHTML = '';
+            var yearsworking = parseInt(document.getElementById('yearsworking').value);
+            console.log('yrswrk:',yearsworking);
+            if (yearsworking < 5) {
+                PTOperCheck = 5;
+            }
+
+            if (yearsworking >= 5 ) {
+                PTOperCheck = 6;
+            }
+
+            if (yearsworking >= 10 ) {
+                PTOperCheck = 7;
+            }
+            var weeksSoFar = parseInt(document.getElementById('weeksSoFar').value);
+
+            var NumberOfChecks = weeksSoFar / 2;
+
+            var HoursToDate = NumberOfChecks * PTOperCheck;
+            
+            var results = parseInt(document.getElementById('results').value);
+            
+            var hoursused = parseInt(document.getElementById('hoursused').value);
+            
+            console.log('hrsused', hoursused);          
+            if (hoursused > 0) {
+                HoursToDate = HoursToDate - hoursused;
+            }
+
+            console.log(results);
+            if (results === 0) {
+                HoursToDate = HoursToDate / 1;
+            }
+
+            if (results === 8) {
+                HoursToDate = HoursToDate / 8;
+            }
+
+            if (results === 40 ) {
+                HoursToDate = HoursToDate / 40;
+            }
+
+            if (yearsworking === 0) {
+                errorYrs.innerHTML = 'Please include your years to date!';
+            }
+            
+            if (weeksSoFar === 0) {
+                errorWeeks.innerHTML = 'Please include your weeks to date!';
+            }
+
+            output.innerHTML = HoursToDate;
+        }
+    </script>
+</body>
+</html>

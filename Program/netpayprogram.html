@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="em">
+<head>
+    <meta charset="utf-8"/>
+    <title>Net Pay Programs</title>
+</head>
+<body>
+    <h1>Net Pay Program</h1>
+    <p>Simple NET pay calculator. It takes your gross pay and then deducts Federal, State, FICA. It has the option to deduct any additional amount from your check<br> 
+        Then it displays your Net pay.</p>
+    
+    <!--<p>Declarations</p>
+    <ol>
+        <li>grosspay = Input</li>
+        <li>federal = .15</li>
+        <li>state = .05</li>
+        <li>fica = .0762</li>
+        <li>CheckOne = grosspay * federal </li>
+        <li>CheckTwo = grosspay * state </li>
+        <li>CheckThree = grosspay * fica </li>
+        <li>GlobalCheck = CheckOne + CheckTwo + CheckThree</li>
+        <li>NetCheck = grosspay - GlobalCheck</li>
+        <li>additionalDeduction = 0</li>
+    </ol>
+        This is the function PsudeoCode
+    <ol>
+        <li>START</li>
+        <li>Display "What is gross pay"</li>
+        <li>Input</li>
+        <li>grosspay * federal</li>
+        <li>grosspay * state</li>
+        <li>grosspay * fica</li>
+        <li>CheckOne + CheckTwo + CheckThree</li>
+        <li>grosspay - GlobalCheck</li>
+        <li>Display "Your total netpay is "NetCheck" </li>
+        <li>DISPLAY "Would you like to make any additional deductions?"</li>
+        <li>INPUT ans</li>
+        <li>PROCESS if ans === true/yes</li>
+            <ul>
+                <li>Display "Enter additional amout:"</li>
+                <li>INPUT additionalDeduction</li>
+                <li>PROCESS NetCheck = NetCheck - additionalDeduction</li>
+            </ul>
+        <li>DISPLAY "Your Net Pay is "NetCheck"</li>
+        <li>END</li>
+    </ol>-->
+    
+
+    <!--<p>What is your gross pay?</p>
+    <form action="#" onsubmit="NetPaySystem()">
+        <input type="text" id="grosspay">
+        <p>Any Additional Deductions? If Not Leave Blank</p>
+        <input type="text" id="additionalDeduction" value="0">
+        <input type="submit" value="submit">
+    </form>-->
+
+    <!--<p>Your net pay is <span id="output"></span></p><br>
+    <script>
+        // Get the element we will fill with the answer
+        function NetPaySystem() {
+            var output = document.getElementById('output');
+            var additionalDeduction = 1000;
+            var grosspay = 50000;
+            var federal = .15;
+            var state = .05;
+            var fica = .0762;
+            var CheckOne = grosspay * federal;
+            var CheckTwo = grosspay * state;
+            var CheckThree = grosspay * fica;
+            var GlobalCheck = CheckOne + CheckTwo + CheckThree + additionalDeduction;
+            var NetCheck = grosspay - GlobalCheck;
+            output.innerHTML = NetCheck;
+        }
+        NetPaySystem()
+    </script>-->
+
+    <p>What is your gross pay?</p>
+    <form action="#" onsubmit="NetPaySystem()">
+        <input type="text" id="grosspay">
+        <p>Any Additional Deductions? If Not Leave Blank</p>
+        <input type="text" id="additionalDeduction" value="0">
+        <input type="submit" value="submit">
+    </form>
+    <p id="message">&nbsp;</p>
+    <p>Your net pay is <span id="output"></span> per year.</p>
+    <script>
+        // Get the element we will fill with the answer
+        function NetPaySystem() {
+            var output = document.getElementById('output');
+            var additionalDeduction = parseInt(document.getElementById('additionalDeduction').value);
+            var grosspay = parseInt(document.getElementById('grosspay').value);
+            var federal = .15;
+            var state = .05;
+            var fica = .0762;
+            var CheckOne = grosspay * federal;
+            var CheckTwo = grosspay * state;
+            var CheckThree = grosspay * fica;
+            var GlobalCheck = CheckOne + CheckTwo + CheckThree + additionalDeduction;
+            var NetCheck = grosspay - GlobalCheck;
+            setTimeout(function() {
+                message.innerHTML = "We are deducting your Federal Tax";
+                }, 1000);
+            setTimeout(function() {
+                message.innerHTML = "We are deducting your Federal Tax";
+                }, 1500);
+            setTimeout(function() {
+                message.innerHTML = "We are deducting your Federal Tax";
+                }, 1000);
+                
+                    
+            output.innerHTML = NetCheck;
+        }
+    </script>
+
+</body>
+</html>

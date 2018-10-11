@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PTO2</title>
+</head>
+<body>
+
+<h2>PTO TWO</h2>
+<!--<p>
+    V2<br>
+    1-5 = 5hrs<br>
+    equal to or Greater than 5yrs = 6hrs<br>
+    equal to or Greater than 10yrs = 7hrs<br>
+    PTO for 1yr in weeks<br>
+</p>
+
+<p>Start</p><br>
+<p>if yearsworked is less than 5 then hoursperpaycheck = 5</p><br>
+<p>if yearsworked is equal to or greater than 5 then hoursperpaycheck = 6</p><br>
+<p>if yearsworked is equal to or greater then 10 hoursperpaycheck = 7</p><br>
+<p>Display"You get 26 checks for a bi-weekly year"</p><br>
+<p>set hoursperPayCheck * 26 = hoursPerYear</p><br>
+<p>Display "You work 40 hours per week"</p><br>
+<p>set hourperweeks = 40</p><br>
+<p>oneyearInWeeks = hoursPerYear / hourperweeks</p><br>
+<p>Display"oneyearInWeeks"</p><br>
+<p>End</p><br>
+
+<p>Enter names in the fields, then click "Submit" to submit the form:</p>-->
+
+<p>Your PTO is <span id="output"></span></p><br>
+
+<form action="#" onsubmit="event.preventDefault(); callPTO2();">
+    <input type='text' id='yearsworked'>
+    <input type="submit" value="submit">
+</form>
+
+<script>
+    function callPTO2() {
+        var output = document.getElementById('output');
+        
+        var yearsworked = parseInt(document.getElementById('yearsworked').value);
+        
+        if (yearsworked < 5) {
+        hoursperPayCheck = 5;
+        }
+
+        if (yearsworked >= 5 ) {
+        hoursperPayCheck = 6;
+        }
+
+        if (yearsworked >= 10 ) {
+        hoursperPayCheck = 7;
+        }
+        var biweekly = 26;
+
+        hoursPerYear = hoursperPayCheck * biweekly;
+
+        var hoursPerWeeks = 40;
+
+        var oneyearInWeeks = hoursPerYear / hoursPerWeeks;
+
+        output.innerHTML = oneyearInWeeks;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PTO 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+    <h1>Simple Investment Calculator
+        A simple investment calculator that takes an initial investment amount in dollars. Then accepts an interest rate between 2-7%. <br>
+        Enter a investment term(ie. how long). 
+        Then specify that the term will be in years or months.<br> Then takes an additional amount of money for each term of the investment.<br>
+        Result will be your total 
+        interest earned and the total amount in your account.</h1>
+   <!-- <p>Start</p>
+    <p>User gives input of how much money they want to invest which equal = MoneyAmountFirst</p>
+    <p>User gives input of how much intrest they want on their money from 1-7% = interestRateChoice</p>
+    <p>User gives input of whether they want it displayed in months or years = yearsOfIntrest or monthsOfIntrest</p>
+    <p>semiAmount = MoneyAmountFirst * interestRateChoice</p>
+    <p>intrestOne = semiAmount * yearsOfIntrest or monthsOfIntrest</p>
+    <p>IntrestEarned = MoneyAmountFirst - IntrestOne</p>
+    <p>totalAmountInAccount = MoneyAmountFirst + IntrestOne </p>  
+    <p>End</p>-->
+    
+    <h2>Hello World!</h2>
+    <form action="#" onsubmit="event.preventDefault(); IntrestRateCalc();">
+        <label for="money">How much money would you like to invest ?</label>
+        <input name="money" id="moneyAmountFirst" type="text" placeholder="$.00"><br>
+        <br>
+        <label for="monthsoryears">Would you like this rate in months or years ?</label><br>
+        <select id="monthsoryears" action="#">
+            <option value="1">Years</option>
+            <option value="2">Months</option>
+        </select><br>
+        <label for="termTime">How long would you like your term to be ?</label>
+        <input name="termTime" id="termTime" type="text" placeholder="0"><br>
+        <br>
+        <br><br>
+        <label for="cash">How much money additional would you like to invest per term ?</label>
+        <input name="cash" id="MoneyPaymentsPer" type="text" placeholder="$.00"><br>
+        <br>
+        <br>
+        <select id="interestRateChoice">
+            <option  value=".01">1%</option>
+            <option  value=".02">2%</option>
+            <option  value=".03">3%</option>
+            <option  value=".04">4%</option>
+            <option  value=".05">5%</option>
+            <option  value=".06">6%</option>
+            <option  value=".07">7%</option>
+        </select><br><br>
+        <label for="interestRateChoice">Select Intrest Rate</label>
+        <br>      
+        <br>
+        <input type="submit" value="submit">
+    </form>
+    <br>
+    <br>
+    <p>Your Total Intrest Earned is <span id="output"></span></p>
+    <p>Your Total Amount In Account is <span id="finalamount"></span></p>
+    <script>
+            function IntrestRateCalc() {
+                var output = document.getElementById('output');
+                var finalamount = document.getElementById('finalamount');
+                var moneyAmountFirst = parseInt(document.getElementById('moneyAmountFirst').value);
+                var monthsoryears = parseInt(document.getElementById('monthsoryears').value);
+                var termTime = parseInt(document.getElementById('termTime').value);
+                var interestRateChoice = parseInt(document.getElementById('interestRateChoice').value);
+                var MoneyPaymentsPer = parseInt(document.getElementById('MoneyPaymentsPer').value);
+                var semiAmount = 0; 
+                var IntrestEarned = 0;
+                var totalAmountInAccount = 0;
+                
+                if (interestRateChoice  === .01) {
+                interestRateChoice = .01;
+                }
+
+                if (interestRateChoice  === .02) {
+                interestRateChoice = .02;
+                }
+
+                if (interestRateChoice === .03) {
+                interestRateChoice = .03;
+                }
+
+                if (interestRateChoice === .04) {
+                interestRateChoice = .04;
+                }
+
+                if (interestRateChoice === .05) {
+                interestRateChoice = .05;
+                }
+
+                if (interestRateChoice === .06) {
+                interestRateChoice = .06;
+                }
+                if (interestRateChoice  === .07) {
+                interestRateChoice = .07;
+                }
+                
+                var semiAmount = moneyAmountFirst * interestRateChoice;
+                
+                var perfectIntrestRate = semiAmount * termTime;
+
+                var IntrestEarned  = moneyAmountFirst - perfectIntrestRate ;
+
+                var totalAmountInAccount = moneyAmountFirst + perfectIntrestRate ;
+                
+                output.innerHTML = IntrestEarned;
+
+                finalamount.innerHTML = totalAmountInAccount; 
+                          
+                }
+    </script>
+</body>
+</html>
