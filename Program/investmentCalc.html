@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Investment Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <form action="#" onsubmit="event.preventDefault(); IntrestRateCalcYears();">
+        <label for="interestRateChoice">What is your interest rate ?</label>
+        <select id="interestRateChoice">
+                <option  value=".01">1%</option>
+                <option  value=".02">2%</option>
+                <option  value=".03">3%</option>
+                <option  value=".04">4%</option>
+                <option  value=".05">5%</option>
+                <option  value=".06">6%</option>
+                <option  value=".07">7%</option>
+            </select><br><br>
+        
+            <label for="termRate">Which term would you like to use ?</label><br>
+        <select id="termRate">
+            <option value="1">Year</option>
+            <option value="2">Month</option>
+        </select>
+        <br>
+        
+        <label for="additonalPayments">Before we start are you adding any additonal payments if so how much ?</label>
+        <input name="termTime" id="additonalPayments" type="text" placeholder="$0.00"><br>
+        <br>
+        
+        <label for="totalInvestmentpay">What is the total amount of money you want to invest ?</label>
+        <input name="termTime" id="additonalPayments" type="text" placeholder="$0.00"><br>
+        <br>
+
+        <input type="submit" value="submit">
+    </form>
+    <p>Your intrest earned is<span id="output"></span> per term.</p>
+
+        <p>The total amount in your account is <span id="accountBalance"></span></p>
+    <script> 
+            function IntrestRateCalcYears() {
+                var output = document.getElementById('output');
+                var finalamount = document.getElementById('finalamount');
+                var termRate = document.getElementById('termRate').value;
+                var additonalPayments = parseInt(document.getElementById('additonalPayments').value);
+                var interestRateChoice = parseFloat(document.getElementById('interestRateChoice').value);
+                var totalInvestmentpay = 0;
+                var totalInvestmentpay = parseInt(document.getElementById('totalInvestmentpay').value);
+                var additonalTermTime = parseInt(document.getElementById('additonalTermTime').value);
+                
+                var payADD = additonalPayments * 12;
+                
+                var subTotalAmountInvest = totalInvestmentpay + payADD;
+
+                if (interestRateChoice  === .01) {
+                interestRateChoice = .01;
+                }
+
+                if (interestRateChoice  === .02) {
+                interestRateChoice = .02;
+                }
+
+                if (interestRateChoice === .03) {
+                interestRateChoice = .03;
+                }
+
+                if (interestRateChoice === .04) {
+                interestRateChoice = .04;
+                }
+
+                if (interestRateChoice === .05) {
+                interestRateChoice = .05;
+                }
+
+                if (interestRateChoice === .06) {
+                interestRateChoice = .06;
+                }
+
+                if (interestRateChoice  === .07) {
+                interestRateChoice = .07;
+                }
+                
+                if (termRate === 1) {
+                totalIntrest = subTotalAmountInves * interestRateChoice;
+                }
+                
+                var accountBalance = totalIntrest + subTotalAmountInvest;
+               
+                output.innerHTML = totalIntrest;
+
+                finalAmount.innerHTML = accountBalance;
+
+            } 
+    </script>
+</body>
+</html>

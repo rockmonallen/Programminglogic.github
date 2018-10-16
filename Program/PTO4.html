@@ -58,6 +58,18 @@
     <br>
     <p>Your Total Intrest Earned is <span id="output"></span></p>
     <p>Your Total Amount In Account is <span id="finalamount"></span></p>
+
+    <p>newAmount = additionalAmount * termChoice</p>
+    <p>amountInvesting = newAmount + moneyAmountFirst</p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
     <script>
             function IntrestRateCalc() {
                 var output = document.getElementById('output');
@@ -70,8 +82,20 @@
                 var semiAmount = 0; 
                 var IntrestEarned = 0;
                 var totalAmountInAccount = 0;
+            
+                var semiAmount = moneyAmountFirst * interestRateChoice;
                 
-                if (interestRateChoice  === .01) {
+                var perfectIntrestRate = semiAmount * termTime;
+
+                var IntrestEarned  = moneyAmountFirst - perfectIntrestRate ;
+
+                var totalAmountInAccount = moneyAmountFirst + perfectIntrestRate ;
+                
+                output.innerHTML = IntrestEarned;
+
+                finalamount.innerHTML = totalAmountInAccount; 
+
+                 if (interestRateChoice  === .01) {
                 interestRateChoice = .01;
                 }
 

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PetFinder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <ol>
+        <li>START</li>
+        <li>Would you like a normal pet ?
+            <ol>
+                <li>If Yes/TRUE
+                    <ol>
+                        <li>Would you like a rodent or Lagomopha ?</li>
+                            <li>If Yes/TRUE</li>
+                            <li>Which one Rodent or Lagomopha?</li>
+                            <li>(PRINT NEW HAMSTER OTW</li>
+                            <li>(PRINT NEW RABBIT OTW</li>
+                    </ol>
+                    <ol>
+                            <li>If No/FALSE</li>
+                            <li>Pick between Canis or Felida ?</li>
+                                <li>IF CANIS (PRINT NEW DOG OTW</li>
+                                <li>IF FELIDA (PRINT NEW CAT OTW</li>
+                            </li>
+                    </ol>
+                <li>IF NO/FALSE</li>
+                        <ol>
+                            <li>Would you like arachrids or bird group ?</li>
+                            <li>If Yes/TRUE</li>
+                            <li>Which one birds groups or arachrids ?</li>
+                            <li>IF BIRDS (PRINT NEW PARROT OTW</li>
+                            <li>IF ARACHRIDS (PRINT NEW SPIDERS OTW</li>
+                        </ol>
+                        
+                            <li>If No/FALSE</li>
+                                <li>Would you like Mammal or Reptile ?</li>
+                                    <li>IF REPTILE (PRINT NEW SNAKE OTW</li>
+                                    <li>IF MAMMAL (PRINT NEW FISH OTW</li>
+                                </li>
+                        </ol>
+            </ol>
+        </li> 
+       
+        <li>END</li>   
+        
+        <form action="#" onsubmit="event.preventDefault(); pickyourpet();">
+            <input type="submit" value="submit">
+        </form>
+    </ol>
+
+    <script>
+        function pickyourpet() {
+            var questionzero = 'Would you like a normal pet? yes/no';
+            var questionone = 'Would you like a rodent or a Lagomopha? yes/no';
+            var questiontwo = 'Which one Rodent or Lagomopha?';
+            var questionthree = 'Your new hamster is otw';
+            var questionfour = 'Your new rabbit is otw';
+            var questionfive = 'Well pick between Canis or Felida ?';
+            var questionsix = 'Your new dog is otw !';
+            var questionseven = 'Your new cat is otw !';
+            var questioneight = 'Would you like arachrids or birdgroup ?';
+            var questionnine = 'Which one birdsgroup or arachrids ?';
+            var questionten = 'Your new parrot is otw !';
+            var questioneleven = 'Your new spider is otw !';
+            var questiontwelve = 'Choose between Mammal or Reptile ?';
+            var questionthirteen = 'Your new spider is otw !';
+            var questionfourteen = 'Your new fish is otw !';
+  
+            var answer = prompt(questionzero);
+            if (answer.toLowerCase() == 'yes') {
+                prompt(questionone);
+                console.log('yrswrk:',questionone);
+                if (questionone.toLowerCase() == 'yes') {
+                    prompt(questiontwo);
+                    if (questiontwo.toLowerCase() == 'rodent') {
+                        alert(questionthree);
+                        if (questiontwo.toLowerCase() == 'lagomopha') {
+                            alert(questionfour);
+                        }
+                    }       
+                }
+
+                if (questionone == 'no') {
+                    prompt(questionfive);
+                    if (questionfive.toLowerCase() == 'canis') {
+                        alert(questionsix);
+                        if (questionthree.toLowerCase() == 'felida') {
+                            alert(questionseven);
+                        }
+                    }
+                }            
+            }
+                
+                
+            if (answer.toLowerCase() == 'no') {
+                prompt(questioneight.toLowerCase()); 
+                if (questioneight.toLowerCase() == 'yes') {
+                    prompt(questionnine); 
+                    if (questionnine.toLowerCase() == 'birdgroup') {
+                        alert(questionten); 
+                        if (questioneight.toLowerCase() == 'arachrids') {
+                            alert(questioneleven); 
+                            if (questioneight.toLowerCase() == 'no') {
+                                prompt(questiontwelve);
+                                if (questiontwelve.toLowerCase() == 'mammal') {
+                                    alert(questionfourteen); 
+                                    if (questioneight.toLowerCase() == 'arachrids') {
+                                        alert(questionthirteen);
+                                    }
+                                }                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+                                
+    </script>
+   
+</body>
+</html>
