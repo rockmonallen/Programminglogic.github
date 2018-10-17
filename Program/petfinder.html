@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <ol>
+    <!--<ol>
         <li>START</li>
         <li>Would you like a normal pet ?
             <ol>
@@ -44,12 +44,13 @@
             </ol>
         </li> 
        
-        <li>END</li>   
+        <li>END</li>  
+        </ol> 
+    -->
         
         <form action="#" onsubmit="event.preventDefault(); pickyourpet();">
             <input type="submit" value="submit">
         </form>
-    </ol>
 
     <script>
         function pickyourpet() {
@@ -71,53 +72,52 @@
   
             var answer = prompt(questionzero);
             if (answer.toLowerCase() == 'yes') {
-                prompt(questionone);
-                console.log('yrswrk:',questionone);
-                if (questionone.toLowerCase() == 'yes') {
-                    prompt(questiontwo);
-                    if (questiontwo.toLowerCase() == 'rodent') {
+                answer = prompt(questionone);
+                if (answer.toLowerCase() == 'yes') {
+                    answer = prompt(questiontwo);
+                    if (answer.toLowerCase() == 'rodent') {
                         alert(questionthree);
-                        if (questiontwo.toLowerCase() == 'lagomopha') {
-                            alert(questionfour);
-                        }
-                    }       
+                    }
+                    if (answer.toLowerCase() == 'lagomopha') {
+                        alert(questionfour);
+                    }     
                 }
 
-                if (questionone == 'no') {
-                    prompt(questionfive);
-                    if (questionfive.toLowerCase() == 'canis') {
+                if (answer.toLowerCase() == 'no') {
+                    answer = prompt(questionfive);
+                    if (answer.toLowerCase() == 'canis') {
                         alert(questionsix);
-                        if (questionthree.toLowerCase() == 'felida') {
-                            alert(questionseven);
-                        }
+
+                    }
+                    if (answer.toLowerCase() == 'felida') {
+                        alert(questionseven);
                     }
                 }            
             }
                 
-                
             if (answer.toLowerCase() == 'no') {
-                prompt(questioneight.toLowerCase()); 
-                if (questioneight.toLowerCase() == 'yes') {
-                    prompt(questionnine); 
-                    if (questionnine.toLowerCase() == 'birdgroup') {
-                        alert(questionten); 
-                        if (questioneight.toLowerCase() == 'arachrids') {
-                            alert(questioneleven); 
-                            if (questioneight.toLowerCase() == 'no') {
-                                prompt(questiontwelve);
-                                if (questiontwelve.toLowerCase() == 'mammal') {
-                                    alert(questionfourteen); 
-                                    if (questioneight.toLowerCase() == 'arachrids') {
-                                        alert(questionthirteen);
-                                    }
-                                }                
-                            }
-                        }
+                answer = prompt(questioneight);
+                if (answer.toLowerCase() == 'yes') {
+                    answer = prompt(questionnine);
+                    if (answer.toLowerCase() == 'birdgroup') {
+                        alert(questionten);
                     }
+                    if (answer.toLowerCase() == 'arachrids') {
+                        alert(questioneleven);
+                    }     
                 }
-            }
-        }
-                                
+
+                if (answer.toLowerCase() == 'no') {
+                    answer = prompt(questiontwelve);
+                    if (answer.toLowerCase() == 'mammal') {
+                        alert(questionfourteen);
+                    }
+                    if (answer.toLowerCase() == 'arachrids') {
+                        alert(questionthirteen);
+                    }
+                }            
+            }              
+        }                  
     </script>
    
 </body>
