@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>You Mama's Fanasty</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css"/>
+    <style>
+
+        body {
+            background-color: black;
+        }
+        container {
+            position: relative;
+        }
+
+        form {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -70px;
+            margin-left: -223px;
+            border: 40px dotted red;
+            border-radius: 20px;
+        }
+
+        p {
+            color:white;
+            font-size: 50px;
+        }
+        
+        input {
+            position: absolute;
+            bottom:5px;
+            left:80px;
+            font-size:2px;
+            
+        }
+        
+       input:hover {
+           color:red;
+       }
+
+    </style>
+</head>
+<body>
+    
+        <div class="container">
+            <div class="row">
+                <div class="out-bar col-sm-12">
+                    <div class="move_around">
+                        <form onsubmit="event.preventDefault(); generateHero();">
+                            <p><span id="output"></span></p>
+                            <br>    
+                            <input type="submit" value="submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+    <script>
+        function generateHero() {
+            var heroNames = ['YO MAMA SO FAT'];
+            var heroAdjectives = ['she eat anything that has legs' , 'she got hot sauce instead of breast milk', 'she can swim in her sweat','she gone die if she eat again','she tried to eat her own fat ' , 'she got stress marks in her eyes','she waste wedding cake on her wedding dress' , 'she on both sides of the family', 'she will eat the clouds if she could' , 'she ate her tv remote','KFC filed a lawsuit agasint her','that she blame it on you','she will eat rotel without chips','she lick the basketball court for gatorade drops','it take 2 days for her to take a bath','she took her student lunches during nap time','we call her billy the big Goat Monster' ,'she ran away from the vegtabales "NOO VEGGIES DONT TOUCH ME NOOO"','legend says it that she ate the big foot , slow roasted him with sauted onions, cranberry dipping sauce, and grilled carrots.','I tried to give her a hug and ended up in her belly button for the weekend.','the IRS say she got to pay taxes on them extra body rolls she got','its so nasty being around that monster of a woman why would you call that pig slop your mother more like a obese turd','she tried to eat lunch before it came','she just big for no reason like thats embrassing bro you should talk to her about weight control , or call the police on that big SILVERBACK !!!','BIG OLE NASTY BODY RIB TIP BODY LOOK LIKE BODY BODY TOUCH THE FLOW WHEN SHE WALK BODY MAKE BODY BODY OLE BODY','this my best one right here lol , yo mama so fat she spilt yo mama in half during birth and when the docter held her she bite his arm off and when he dropped her , she ate the hole hospital like on walking dead because she so freaking fat dang man mississippi already number one for obesity why yo stupid mama got to add to the intrest rate she sooooo fat bro i saw her at the chuicke cheese ordering pizza ! NO KIDS BRO SHE JUST WANTED A PIZZA TO FEED THEM JELLY ROLES JELLY MAMA JELLY BODY OLE JELLY JELLY JELLY JELLY JELLLLLLLY' ];
+            
+          
+            var idx1 = Math.round(Math.random() * 20);
+            var theAdjectivesOfhero = heroAdjectives[idx1];
+            
+            var finalHERO = heroNames + ' ' + theAdjectivesOfhero;
+
+            output.innerHTML = finalHERO;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Budget WorkSheet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <ul>
+        <li>Start</li>
+        <li>Input "How much income do you make a month" ?</li>
+        <li>Input "Any additonal income for each month" ?</li>
+        <li>waterBill = x</li>
+        <li>lightBill = x</li>
+        <li>carNote = x</li>
+        <li>gasBill = x</li>
+        <li>rentBill = x</li>
+        <li>lawnBill = x</li>
+        <li>Realincome =incomepermonth + additonal income - x</li>
+        <li>End</li>
+    </ul>
+
+    <form action="#" onsubmit="event.preventDefault(); budgetplan();">
+            <p>How much income do you make a month ?</p>
+            <input type="text" id="incomePermonth">
+            <p>How much additonal income do you make ?</p>
+            <input type="text" id="additonalIncome" >
+            <p>Water Bill ?</p>
+            <input type="text" id="waterBill" >
+            <p>Light Bill ?</p>
+            <input type="text" id="lightBill" >
+            <p>Car Note ?</p>
+            <input type="text" id="carNote" >
+            <p>Gas Bill ?</p>
+            <input type="text" id="gasBill" >
+            <p>Rent Bill ?</p>
+            <input type="text" id="rentBill" >
+            <p>Lawn Bill ?</p>
+            <input type="text" id="lawnBill" >
+            <input type="submit" value="submit">
+        </form>
+        
+        <p>Your total income per month after bills is $<span id="output"></span></p>
+
+        <script>
+            function budgetplan() {
+                var output = document.getElementById('output');
+                var incomePermonth = parseInt(document.getElementById('incomePermonth').value);
+                var additonalIncome = parseInt(document.getElementById('additonalIncome').value);
+                var waterBill = parseInt(document.getElementById('waterBill').value);
+                var lightBill = parseInt(document.getElementById('lightBill').value);
+                var carNote = parseInt(document.getElementById('carNote').value);
+                var gasBill = parseInt(document.getElementById('gasBill').value);
+                var rentBill = parseInt(document.getElementById('rentBill').value);
+                var lawnBill = parseInt(document.getElementById('lawnBill').value);
+                
+                var realIncome = incomePermonth + additonalIncome;
+                console.log(realIncome);
+
+                var billTotal = waterBill + lightBill + carNote + gasBill + rentBill + lawnBill;
+
+                output.innerHTML = realIncome - billTotal;
+
+            }
+        </script>
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Super-Hero</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!--3 Arrays 
+
+    5 Adjectives 
+    5 Names
+    5 Powers
+    
+    NOTE: EACH INDEX MUST BE RANDOM FOR EACH PART OF THE GENERATED HERO.
+    IE = EX: adj[0] + name[3] + power[2]
+    var idx = Math.round(Math.random() * 4);
+    
+    <form onsubmit="event.preventDefault(); generateHero();">
+    </form>
+
+    <p><onload="generateHero();"></onload></p>
+
+    <ol>
+        <p>START</p>
+        var heroNames = ['The TonyTiger', 'The TonyMachine' , 'The TonyBeast' , 'The TonyAlien' , 'The TonyCheetah']
+        var heroAdjectives = ['with his tiger suit' , 'with his tall figure' , 'with his sharp teeth' , 'with his army build' , 'with his big eyes']
+        var heroPowers = ['can blow the world up with his cough' , 'can turn into any person he choice' , 'can take over your land by speaking' , 'can make any women be with him' , 'can turn into a airplane that can travel through space']
+        
+        var finalHeroNames = heroNames(Math.round(Math.random() * myArray.length));
+        var finalHeroAdjectives = heroAdjectives(Math.round(Math.random() * myArray.length));
+        var finalHeroPowers = heroPowers(Math.round(Math.random() * myArray.length));
+
+        var finalHERO = finalHeroNames + finalHeroAdjective + finalHeroPowers;
+
+        output.innerHTML = finalHERO;
+        <p>END</p>
+    </ol>
+-->
+   
+    <p><span id="output"></span></p>
+    <br>    
+    <form onsubmit="event.preventDefault(); generateHero();">
+        <input type="submit" value="submit">
+    </form>
+
+    <script>
+        function generateHero() {
+        var heroNames = ['The TonyTiger', 'The TonyMachine' , 'The TonyBeast' , 'The TonyAlien' , 'The TonyCheetah']
+        var heroAdjectives = ['with his tiger suit' , 'with his tall figure' , 'with his sharp teeth' , 'with his army build' , 'with his big eyes']
+        var heroPowers = ['can blow the world up with his cough.' , 'can turn into any person he choice.' , 'can take over your land by speaking.' , 'can make any women be with him.' , 'can turn into a airplane that can travel through space.']
+        
+        var idx1 = Math.round(Math.random() * 4);
+        var theAdjectivesOfhero = heroAdjectives[idx1]
+        var idx1 = Math.round(Math.random() * 4);
+        var allHeropowers = heroPowers[idx1]
+        var idx1 = Math.round(Math.random() * 4);
+        var nameOfThehero = heroNames[idx1]
+        
+        var finalHERO = nameOfThehero + theAdjectivesOfhero + allHeropowers;
+
+        output.innerHTML = finalHERO;
+        }
+
+    </script>
+
+</body>
+</html>
