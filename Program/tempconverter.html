@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tempcac</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+    <form action="#" onsubmit="event.preventDefault(); tempCac();">
+        <label for="cash">What is the tempature in degress celsius?</label>
+        <input name="cash" id="theTempature" type="text" placeholder="Tempature"><br>
+
+       <label for="tempChange">Press submit to find you conversion to fahrenheit.</label>
+        <input id="tempChange" type="submit" value="PRESSME">
+    </form>
+    <p><span id="output"></span> degrees Fahrenheit</p>
+    <script>
+        function tempCac() {
+            var output = document.getElementById('output');
+            var theTempature =  Number(document.getElementById('theTempature').value);
+            output.innerHTML = (theTempature * 9/5) + 32;
+        }
+    </script>

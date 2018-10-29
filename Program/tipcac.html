@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tipcac</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+    <form action="#" onsubmit="event.preventDefault(); tipCac();">
+        <label for="cash">How much money would you like to tip ?</label>
+        <input name="cash" id="checkPayments" type="text" placeholder="$.00"><br>
+
+       <label for="interestRateChoice"> Choose a tip percentage</label>
+        <select id="interestRateChoice">
+            <option value=".1">10%</option>
+            <option value=".15">15%</option>
+            <option value=".18">18%</option>
+            <option value=".20">20%</option>
+        </select>
+        <br>
+        <input type="submit" value="PRESSME">
+    </form>
+    <p>Total amount of intrest to pay is <span id="output"></span></p>
+    <script>
+        function tipCac() {
+            var output = document.getElementById('output');
+            var checkPayments =  Number(document.getElementById('checkPayments').value);
+            var interestRateChoice = Number(document.getElementById('interestRateChoice').value);
+            
+            output.innerHTML = checkPayments * interestRateChoice;
+        }
+    </script>
+</body>
+</html>

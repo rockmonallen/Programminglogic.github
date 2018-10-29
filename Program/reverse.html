@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tipcac</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+    <form action="#" onsubmit="event.preventDefault(); reverseString();">
+        <label for="cash">Type something for reversal.</label>
+        <input name="cash" id="turnItaround" type="text" placeholder="Tempature"><br>
+        <input id="tempChange" type="submit" value="TURNAROUND">
+    </form>
+    <p><span id="output"></span></p>
+    <script>
+        function reverseString(turnItaround) {
+        var output = document.getElementById('output');   
+        var turnItaround = (document.getElementById('turnItaround').value);
+        output.innerHTML = turnItaround.split("").reverse().join("");
+    }
+    </script>

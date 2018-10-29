@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>What rap artist are you ?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <style> 
+
+        body {
+            background-color: black;
+            font-family:'Permanent Marker', cursive;
+        }
+        
+        label {
+            color:purple;
+            font-size:30px;
+        }
+        form {
+            text-align: center;
+        }
+        
+       p {
+           color:purple;
+           font-size:30px;
+       }
+
+       h1{
+           color:white;
+       }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>What type of rap artist are you ?</h1>
+                    <p><span id="output"></span></p>
+                </div>
+            </div>
+        </div>
+           
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                    <br>
+                    <br>
+                    <br>
+                    <form action="#" onsubmit="event.preventDefault(); buzzFeedQuiz();">
+                       <label for="questionOne">How was your childhood ?</label>
+                       <br>
+                            <select id="questionOne" action="#">
+                                <option value="1">We was raised in the suburbs</option>
+                                <option value="5">We had nothing bro my family struggled we had to grind</option>
+                                <option value="20">Some moments we was up then some we was down but we never gave up</option>
+                            </select> 
+                        <br>
+                        <label for="questionTwo">How do you feel about groupies ?</label>
+                        <br>
+                            <select id="questionTwo" action="#">
+                                <option value="1">I love the groupies </option>
+                                <option value="5">Im not tripping on them</option>
+                                <option value="20">Pass them to Lil Bro</option>
+                            </select>
+                        <br>
+                        <label for="questionThree">If someone snatch your chain ?</label>
+                        <br>
+                            <select id="questionThree" action="#">
+                                <option value="1">Buy anthoner one</option>
+                                <option value="5">Make a phone call.</option>
+                                <option value="20">Its going down right then and there</option>
+                            </select>
+                        <br>
+                        <label for="questionFour">What would you do with your rap check ?</label>
+                        <br>
+                            <select id="questionFour" action="#">
+                                <option value="1">Give back and keep a good image.</option>
+                                <option value="5">Support the hood.</option>
+                                <option value="20">Invest it into myself</option>
+                            </select>
+                        <br>
+                        <label for="questionFive">Have you ever been to jail ?</label>
+                        <br>
+                            <select id="questionFive" action="#">
+                                <option value="1">No I havent I know some people who has though</option>
+                                <option value="5">Yes and I'm not trying to go back.</option>
+                                <option value="20">I dont Know</option>
+                            </select>
+                        <br><br>
+                    <input type="submit" value="CLICK ME">
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img src="images/doublecup1.jpg" class="img-responsive">
+                </div>
+                <div class="col-sm-4">
+                    <img src="images/doublecup1.jpg" class="img-responsive">
+                </div>
+                <div class="col-sm-4">
+                    <img src="images/doublecup1.jpg" class="img-responsive">
+                </div>
+            </div>
+        </div>    
+
+    
+    <script>
+        function buzzFeedQuiz() {
+
+            var artistChoices = []
+            var output = document.getElementById('output');
+            var oneFeature = Number(document.getElementById('questionOne').value);
+            var twoFeature = Number(document.getElementById('questionTwo').value);
+            var threeFeature = Number(document.getElementById('questionThree').value);
+            var fourFeature = Number(document.getElementById('questionFour').value);
+            var fiveFeature = Number(document.getElementById('questionFive').value);
+            
+            var answer = oneFeature + twoFeature + threeFeature + fourFeature + fiveFeature;
+            
+            if (answer <= 5) {
+                output.innerHTML = "Drake type rapper.";
+            }
+
+            if (answer > 5 ) {
+                output.innerHTML = "Future type rapper.";
+            }
+
+            if (answer > 25 ) {
+                output.innerHTML = "TonyTiger type rapper.";
+            }
+
+            console.log('yes' , output.innerHTML)
+        }
+    </script>
+</body>
+</html>
